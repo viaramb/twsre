@@ -16,65 +16,20 @@ Python: 3.8
 
 ## Installation
 
-## Option 1: Directly on a Linux host
-1 - Extract files in a directory under the destination server.
-```bash
-git clone https://github.com/viaramb/twsre.git
-or 
-unzip twsre.zip
-```
-
-2 - Install python requirements (is recommended to use a python virtual environment)
-```bash
-cd twsre/
-pip install -r requirements.txt
-```
-
-3 - Turn on API server
-
-```bash
-cd twsre/src/
-python server/server_run.py &
-```
-
-4 - Execute client
-```bash
-python client/run.py
-```
-## Option 2: Docker Desktop
-
-1 - Generate docker image.
-
-```bash
-docker build  -t twsre .
-docker run -i -p 5000:5000 -d twsre
-```
-
-2 - Get client name or container id
-```bash
-docker container ls
-```
-
-3 - Run client
-```bash
-docker exec -it <container-id/name> sh -c "python client/run.py"
-```
-
-## Option 3: Docker Hub
-
 1 - Download and run image from dockerhub.com
 
 ```bash
 docker pull viaramb/twsre:latest
-docker run -i -p 5000:5000 -d viaramb/twsre:latest
+docker run --name sre -p 5000:5000 -d viaramb/twsre
 ```
-2 - Run client
+2 - Connect to containter and execute code
 ```bash
-docker exec -it <container-id/name> sh -c "python client/run.py"
+docker exec -it sre /bin/bash
+python src/client/run.py
 ```
 3 - To get JSON report login to Container
 ```bash
-docker exec -it <container-id/name> bash
+docker exec -it sre bash
 cat client/data/output.json
 ```
 ## Client Output
