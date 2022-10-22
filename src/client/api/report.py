@@ -24,7 +24,6 @@ class Report:
         self._df_report.drop(['aggregated_success', 'aggregated_requests'], axis=1, inplace=True)
 
 
-
 if __name__ == '__main__':
     r = Report('../data/output.json')
     r.aggregate_df()
