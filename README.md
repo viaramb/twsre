@@ -38,3 +38,23 @@ python src/client/run.py
 cat client/data/output.json
 ```
 
+## Unittest
+
+### Server side testing
+
+Under /app/src folder run:
+
+```bash
+python -m unittest server/test/test_* 
+```
+
+### Client side testing
+```shell
+python -m unittest server/test/test_*
+```
+
+### API testing
+```shell
+cd src/server/
+python -m unittest test_server.py
+```
