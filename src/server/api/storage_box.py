@@ -1,6 +1,6 @@
 import random
-from common.server_helper import (generate_random_vars,
-                                  generate_version_nums)
+from .server_helper import (generate_random_vars,
+                            generate_version_nums)
 from flask import jsonify
 
 

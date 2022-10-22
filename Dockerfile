@@ -1,4 +1,4 @@
-FROM python:3.8.6-buster
+FROM python:3.9-slim-buster
 WORKDIR /app
 
 # Install packages
@@ -14,6 +14,7 @@ RUN pip install -r requirements.txt
 # Copy source code
 RUN mkdir /app/src
 COPY /src src/
+COPY /container_conf/.tmux.conf /root/
 RUN cd src
 
 # Run application

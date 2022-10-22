@@ -12,71 +12,29 @@ Server Version: 1.0
 
 Client Version: 1.0
 
-Python: 3.8 
+Python: 3.9
 
 ## Installation
 
-## Option 1: Directly on a Linux host
-1 - Extract files in a directory under the destination server.
-```bash
-git clone https://github.com/viaramb/twsre.git
-or 
-unzip twsre.zip
-```
-
-2 - Install python requirements (is recommended to use a python virtual environment)
-```bash
-cd twsre/
-pip install -r requirements.txt
-```
-
-3 - Turn on API server
-
-```bash
-cd twsre/src/
-python server/server_run.py &
-```
-
-4 - Execute client
-```bash
-python client/run.py
-```
-## Option 2: Docker Desktop
-
-1 - Generate docker image.
-
-```bash
-docker build  -t twsre .
-docker run -i -p 5000:5000 -d twsre
-```
-
-2 - Get client name or container id
-```bash
-docker container ls
-```
-
-3 - Run client
-```bash
-docker exec -it <container-id/name> sh -c "python client/run.py"
-```
-
-## Option 3: Docker Hub
+IMPORTANT: You will need to install docker in to your workstation. Follow instructions
+under https://docs.docker.com/engine/install/ once docker is installed continue with below steps.
 
 1 - Download and run image from dockerhub.com
 
 ```bash
 docker pull viaramb/twsre:latest
-docker run -i -p 5000:5000 -d viaramb/twsre:latest
+docker run --name sre -p 5000:5000 -d viaramb/twsre
 ```
-2 - Run client
+2 - Connect to containter
 ```bash
-docker exec -it <container-id/name> sh -c "python client/run.py"
+docker exec -it sre /bin/bash
 ```
-3 - To get JSON report login to Container
+3 - Execute code to print report on screen
 ```bash
-docker exec -it <container-id/name> bash
+python src/client/run.py
+```
+4 - If you would like to see report in JSON format
+```bash
 cat client/data/output.json
 ```
-## Client Output
 
-file destination: src/client/data/output.json
