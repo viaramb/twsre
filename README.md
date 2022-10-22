@@ -12,9 +12,12 @@ Server Version: 1.0
 
 Client Version: 1.0
 
-Python: 3.8 
+Python: 3.9
 
 ## Installation
+
+IMPORTANT: You will need to install docker in to your workstation. Follow instructions
+under https://docs.docker.com/engine/install/ once docker is installed continue with below steps.
 
 1 - Download and run image from dockerhub.com
 
@@ -22,15 +25,16 @@ Python: 3.8
 docker pull viaramb/twsre:latest
 docker run --name sre -p 5000:5000 -d viaramb/twsre
 ```
-2 - Connect to containter and execute code
+2 - Connect to containter
 ```bash
 docker exec -it sre /bin/bash
+```
+3 - Execute code to print report on screen
+```bash
 python src/client/run.py
 ```
-3 - Report is printed on screen if you would like to see the JSON report
+4 - If you would like to see report in JSON format
 ```bash
 cat client/data/output.json
 ```
-## Client Output
 
-file destination: src/client/data/output.json
