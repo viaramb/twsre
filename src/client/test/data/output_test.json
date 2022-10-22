@@ -1,0 +1,37 @@
+[
+  {
+    "application": "Webapp0",
+    "error_count": 1042818183,
+    "requests_count": 5194800568,
+    "success_count": 4151986202,
+    "version": "1.0.2"
+  },
+  {
+    "application": "Cache1",
+    "error_count": 1042818758,
+    "requests_count": 5194800430,
+    "success_count": 4151986316,
+    "version": "0.2.3"
+  },
+  {
+    "application": "Database1",
+    "error_count": 1042819406,
+    "requests_count": 5194800001,
+    "success_count": 4151986708,
+    "version": "0.2.2"
+  },
+  {
+    "application": "Cache1",
+    "error_count": 1042816410,
+    "requests_count": 5194800833,
+    "success_count": 4151986646,
+    "version": "1.2.2"
+  },
+  {
+    "application": "Database0",
+    "error_count": 1042817734,
+    "requests_count": 5194800693,
+    "success_count": 4151986213,
+    "version": "0.1.0"
+  }
+]
