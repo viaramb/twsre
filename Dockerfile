@@ -14,6 +14,7 @@ RUN pip install -r requirements.txt
 # Copy source code
 RUN mkdir /app/src
 COPY /src src/
+COPY /container_conf/.tmux.conf /root/
 RUN cd src
 
 # Run application

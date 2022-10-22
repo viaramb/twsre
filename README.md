@@ -27,9 +27,8 @@ docker run --name sre -p 5000:5000 -d viaramb/twsre
 docker exec -it sre /bin/bash
 python src/client/run.py
 ```
-3 - To get JSON report login to Container
+3 - Report is printed on screen if you would like to see the JSON report
 ```bash
-docker exec -it sre bash
 cat client/data/output.json
 ```
 ## Client Output
